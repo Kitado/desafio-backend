@@ -10,7 +10,7 @@ Use seus conhecimentos de crawlers web para ajudar seu robô a montar uma máqui
 
 ### Objetivos
   - Criar uma branch para você `feature/seu-nome`  
-  - Habilidade montar um crawler
+  - Codar um crawler web
   - Interagir com um WS usando SOAP
   - Persistir dados
   - Configuração de containers docker (extra)
