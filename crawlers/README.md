@@ -9,13 +9,14 @@ Use seus conhecimentos de crawlers web para ajudar seu robô a montar uma máqui
   A ideia principal dessa avaliação é verificar pontos de entedimento da demanda, a sua lógica e forma de desenvolver o seu código. Não vamos avaliar se o teste foi todo finalizado, ou se todas as tecnologias que recomendamos foram usadas. 
 
 ### Objetivos
+  - Criar uma branch para você `feature/seu-nome`  
   - Habilidade montar um crawler
   - Interagir com um WS usando SOAP
   - Persistir dados
-  - Configuração de containers docker
+  - Configuração de containers docker (extra)
 
 ## Orientações
-1) Entrar em um site de venda de periféricos de sua escolha e cotar os seguintes periféricos
+1) Visitar em um site de venda de periféricos de sua escolha e cotar os seguintes periféricos
  - Uma placa de vídeo
  - Um teclado e mouse
  - Um HD SSD
@@ -63,5 +64,5 @@ Para desenvolvimento do projeto recomendamos usar as seguintes libs do NodeJS, m
 - Nightmare
 - soapaspromise
 - Node 8 (async, await)
-- docker
 - Linux
+- Quer marcar um golaço? Coloque seu robô para rodar em um container docker!
