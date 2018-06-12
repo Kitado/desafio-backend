@@ -56,6 +56,7 @@ function crawler(initialLink, product) {
           console.log(`Ending crawler for product: ${product}`)
           return resolve(result)
         })
+        .catch((err) => { throw new Error(err.message) })
   
     } catch (err) {
       await headlessNav.end()
