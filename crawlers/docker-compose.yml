@@ -1,0 +1,12 @@
+mongo:
+  image: mongo:latest
+  container_name: "mongo"
+  ports:
+    - "27017:27017"
+crawler_blu365:
+  build: .
+  container_name: crawler_blu365
+  ports:
+    - "3000:3000"
+  links:
+    - mongo
