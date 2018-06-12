@@ -1,0 +1,8 @@
+{
+  "database": "mongodb://mongo/blu365",
+  "link": "https://informatica.mercadolivre.com.br/",
+  "products": ["placa de video", "teclado e mouse", "HD SSD", "Monitor", "Gabinete"],
+  "ws": "https://www3.bcb.gov.br/wssgs/services/FachadaWSSGS?wsdl",
+  "codDolarCompra": "10813",
+  "codDolarVenda": "1"
+}
