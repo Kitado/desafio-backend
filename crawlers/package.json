@@ -1,0 +1,47 @@
+{
+  "name": "crawler-periferico-blu365",
+  "version": "1.0.0",
+  "description": "Desafio Back-End",
+  "main": "index.js",
+  "scripts": {
+    "clean": "./node_modules/.bin/rimraf ./dist",
+    "build": "npm run clean && babel src/ -d dist/",
+    "build:prod": "npm run build && clear && npm run prod",
+    "start": "DEBUG=nightmare xvfb-run --server-args='-screen 0 1024x768x24' node ./dist/index.js",
+    "docker:start": "docker-compose up -d --build",
+    "dev": "./node_modules/.bin/nodemon",
+    "lint": "node_modules/.bin/eslint src/**/*.js",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "keywords": [
+    "blu365",
+    "crawler",
+    "soap",
+    "mongodb"
+  ],
+  "author": "Douglas E. Alves",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "mongoose": "^5.1.4",
+    "nightmare": "^3.0.1",
+    "pm2": "^2.10.4",
+    "rimraf": "^2.6.2",
+    "soap": "^0.24.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "nodemon": "^1.17.5"
+  }
+}
