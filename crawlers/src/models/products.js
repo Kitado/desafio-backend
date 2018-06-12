@@ -18,8 +18,7 @@ const productsSchema = new connection.Schema({
     required: true
   },
   convertedPrice: {
-    type: Number,
-    required: false
+    type: Number
   },
   createdAt: {
     type: Date,
