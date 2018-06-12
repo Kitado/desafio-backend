@@ -6,7 +6,7 @@ O objetivo do desafio é ajudar o seu robô a comprar um computador para ele mor
 Use seus conhecimentos de crawlers web para ajudar seu robô a montar uma máquina =P
 
 ## O que iremos avaliar 
-  A ideia principal dessa avaliação é verificar pontos de entedimento da demanda, a sua lógica e forma de desenvolver o seu código. Não vamos avaliar se o teste foi todo finalizado, ou se todas as tecnologias que recomendamos foram usadas. 
+  A ideia principal dessa avaliação é verificar pontos de entendimento da demanda, a sua lógica e forma de desenvolver o seu código. Não vamos avaliar se o teste foi todo finalizado, ou se todas as tecnologias que recomendamos foram usadas. 
 
 ### Objetivos
   - Criar uma branch para você `feature/seu-nome`  
@@ -60,7 +60,7 @@ Use seus conhecimentos de crawlers web para ajudar seu robô a montar uma máqui
 ```
 
 ## Desenvolvimento
-Para desenvolvimento do projeto recomendamos usar as seguintes libs do NodeJS, mas não precisa se prender a elas. Use o que você tinver mais familiaridade. Ess código irá rodar em um server Linux, então é importante se atentar para essa questão.
+Para desenvolvimento do projeto recomendamos usar as seguintes libs do NodeJS, mas não precisa se prender a elas. Use o que você tiver mais familiaridade. Ess código irá rodar em um server Linux, então é importante se atentar para essa questão.
 - Nightmare
 - soapaspromise
 - Node 8 (async, await)
