@@ -11,7 +11,7 @@ Use seus conhecimentos de crawlers web para ajudar seu robô a montar uma máqui
 ### Objetivos
   - Criar uma branch para você `ft/seu-nome`
   - Codar um crawler web
-  - Interagir com WebService (XML) ou API REST (JSON)
+  - Interagir com WebService (XML) **ou** API REST (JSON)
   - Persistir dados
   - Executar banco de dados dentro de um container docker
   - Configuração de crawler em container docker
@@ -24,7 +24,7 @@ Use seus conhecimentos de crawlers web para ajudar seu robô a montar uma máqui
  - Um monitor
  - Um gabinete
 
-2) Precisaremos também cotar os valores do produtos em dólar, então você precisa interagir com uma API para cotar os valores dos produtos
+2) Precisaremos também cotar os valores do produtos em dólar, então você precisa interagir com uma API para cotar os valores dos produtos (Caso tenha feito XML/WS não precisa fazer esse)
  - https://economia.awesomeapi.com.br/json/all
  - Pegar os preços dos produtos e converter em dólar
  - Gravar essa informação
@@ -45,7 +45,7 @@ Use seus conhecimentos de crawlers web para ajudar seu robô a montar uma máqui
   }
 ```
 
-2) Precisaremos também cotar os valores do produtos em dólar, então você precisa interagir com o Webservice do Banco central para cotar os valores dos produtos
+2) Precisaremos também cotar os valores do produtos em dólar, então você precisa interagir com o Webservice do Banco central para cotar os valores dos produtos (Caso tenha feito REST não precisa fazer esse)
  - https://www3.bcb.gov.br/wssgs/services/FachadaWSSGS?wsdl
  - Pegar os preços dos produtos e converter em dólar
  - Gravar essa informação
