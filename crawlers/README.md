@@ -77,18 +77,28 @@ Use seus conhecimentos de crawlers web para ajudar seu robô a montar uma máqui
 ```
 
 3) Persistir em um banco de dados
+
  - Nome do item
  - Preço
  - Preço convertido em dólar
- - URL do produto
+ -  URL do produto
  - Uma URL de imagem do produto
-
 
 ## Desenvolvimento
 Para desenvolvimento do projeto recomendamos usar as seguintes libs do NodeJS, mas não precisa se prender a elas. Use o que você tiver mais familiaridade. Ess código irá rodar em um server Linux, então é importante se atentar para essa questão.
-- Nightmare/Puppeteer/Cheerio
+
+- Nightmare / Puppeteer / Cheerio
 - node-soap
 - axios
 - Node (async, await)
 - Linux
 - Quer marcar um golaço? Coloque seu crawler para rodar em um container docker!
+
+## Links
+
+- http://www.nightmarejs.org/
+- https://cheerio.js.org/
+- https://pptr.dev/
+- https://github.com/vpulim/node-soap
+- https://github.com/axios/axios
+- https://blog.geekhunter.com.br/docker-na-pratica-como-construir-uma-aplicacao/
