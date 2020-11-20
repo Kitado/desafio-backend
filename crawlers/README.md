@@ -1,19 +1,20 @@
 # Desafio Javascript Back-end (Crawler) - Blu365
 
 ## Sobre o desafio
-O objetivo do desafio é ajudar o seu robô a comprar um computador para ele morar! 
+O objetivo do desafio é ajudar o seu robô a comprar um computador para ele morar!
 
 Use seus conhecimentos de crawlers web para ajudar seu robô a montar uma máquina =P
 
-## O que iremos avaliar 
-  A ideia principal dessa avaliação é verificar pontos de entedimento da demanda, a sua lógica e forma de desenvolver o seu código. Não vamos avaliar se o teste foi todo finalizado, ou se todas as tecnologias que recomendamos foram usadas. 
+## O que iremos avaliar
+  A ideia principal dessa avaliação é verificar pontos de entedimento da demanda, a sua lógica e forma de desenvolver o seu código. Não vamos avaliar se o teste foi todo finalizado, ou se todas as tecnologias que recomendamos foram usadas.
 
 ### Objetivos
-  - Criar uma branch para você `feature/seu-nome`  
+  - Criar uma branch para você `ft/seu-nome`
   - Codar um crawler web
-  - Interagir com um WS usando SOAP
+  - Interagir com WebService (XML) ou API REST (JSON)
   - Persistir dados
-  - Configuração de containers docker (extra)
+  - Executar banco de dados dentro de um container docker
+  - Configuração de crawler em container docker
 
 ## Orientações
 1) Visitar em um site de venda de periféricos de sua escolha e cotar os seguintes periféricos
@@ -22,21 +23,37 @@ Use seus conhecimentos de crawlers web para ajudar seu robô a montar uma máqui
  - Um HD SSD
  - Um monitor
  - Um gabinete
-2) Persistir em um banco de dados de preferência não-relacional (MongoDB)
- - Nome do item
- - Preço
- - Preço convertido em dólar
- - URL do produto
- - Uma URL de imagem do produto
-3) Precisaremos também cotar os valores do produtos em dólar, então você precisa interagir com o Webservice do Banco central para cotar os valores dos produtos
+
+2) Precisaremos também cotar os valores do produtos em dólar, então você precisa interagir com uma API para cotar os valores dos produtos
+ - https://economia.awesomeapi.com.br/json/all
+ - Pegar os preços dos produtos e converter em dólar
+ - Gravar essa informação
+
+ ```
+  USD": {
+    "code": "USD",
+    "codein": "BRL",
+    "name": "Dólar Comercial",
+    "high": "5.306",
+    "low": "5.285",
+    "varBid": "-0.0026",
+    "pctChange": "-0.05",
+    "bid": "5.3016",
+    "ask": "5.3041",
+    "timestamp": "1605874414",
+    "create_date": "2020-11-20 09:13:36"
+  }
+```
+
+2) Precisaremos também cotar os valores do produtos em dólar, então você precisa interagir com o Webservice do Banco central para cotar os valores dos produtos
  - https://www3.bcb.gov.br/wssgs/services/FachadaWSSGS?wsdl
  - Pegar os preços dos produtos e converter em dólar
  - Gravar essa informação
 
- ```    
+ ```
     CÓDIGO	    NOME
     1	        Dólar (venda)
-    10813        Dólar (compra) 
+    10813        Dólar (compra)
 
     Esse webservice possui os seguintes métodos:
 
@@ -59,10 +76,19 @@ Use seus conhecimentos de crawlers web para ajudar seu robô a montar uma máqui
       - Parâmetros: long[] codigosSeries – Lista(array) dos códigos das séries. String dataInicio – String contendo a data (dd/MM/aaaa) inicial. String dataFim – String contendo a data (dd/MM/aaaa) final. Retorno: WSSerieVO – Lista(array) de objeto série.
 ```
 
+3) Persistir em um banco de dados
+ - Nome do item
+ - Preço
+ - Preço convertido em dólar
+ - URL do produto
+ - Uma URL de imagem do produto
+
+
 ## Desenvolvimento
-Para desenvolvimento do projeto recomendamos usar as seguintes libs do NodeJS, mas não precisa se prender a elas. Use o que você tinver mais familiaridade. Ess código irá rodar em um server Linux, então é importante se atentar para essa questão.
-- Nightmare
-- soapaspromise
-- Node 8 (async, await)
+Para desenvolvimento do projeto recomendamos usar as seguintes libs do NodeJS, mas não precisa se prender a elas. Use o que você tiver mais familiaridade. Ess código irá rodar em um server Linux, então é importante se atentar para essa questão.
+- Nightmare/Puppeteer/Cheerio
+- node-soap
+- axios
+- Node (async, await)
 - Linux
-- Quer marcar um golaço? Coloque seu robô para rodar em um container docker!
+- Quer marcar um golaço? Coloque seu crawler para rodar em um container docker!
