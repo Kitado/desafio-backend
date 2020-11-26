@@ -1,0 +1,19 @@
+{
+  "name": "crawlers",
+  "version": "1.0.0",
+  "description": "## Sobre o desafio O objetivo do desafio é ajudar o seu robô a comprar um computador para ele morar!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "mongoose": "^5.10.16"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
