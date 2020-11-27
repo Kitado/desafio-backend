@@ -4,14 +4,16 @@
   "description": "## Sobre o desafio O objetivo do desafio é ajudar o seu robô a comprar um computador para ele morar!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.0",
-    "mongoose": "^5.10.16"
+    "mongoose": "^5.10.16",
+    "puppeteer": "^5.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
