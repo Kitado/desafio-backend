@@ -17,5 +17,5 @@ mongoose.connection.once('open', () => console.log('database connected'))
 
 
 
-module.exports = mongoose;
+module.exports =  mongoose;
 
