@@ -1,5 +1,8 @@
-const puppeteer = require('puppeteer');
+// const puppeteer = require('puppeteer');
 const Moeda = require('./Moeda');
+const PerifericoModel = require('../models/index');
+
+
 
 function Crawler(Browser,page){
 
@@ -15,15 +18,12 @@ function Crawler(Browser,page){
         await page.click(this.buscaInfo.class);
         await page.type(this.buscaInfo.class,elemento);
         await page.keyboard.press('Enter');
-    }
-
-    this.infoProduto = async function(){
+        
+        await page.waitForNavigation();
 
         const nome = await page.evaluate(
             ()=> document.querySelector('.sc-fzoLsD').innerHTML
         )
-        // const [imgUrl] = await page.$$eval('.sc-fzqNqU img[src]',
-        //     imgs => imgs.map(img => img.getAttribute('src')));
         const imgUrl = await page.evaluate(
             ()=> document.querySelector('.sc-fzoyTs')
             .getAttribute('src')
@@ -56,8 +56,15 @@ function Crawler(Browser,page){
         }
     }
 
-
-
+    this.cadastraProduto = async function(produto){
+        try{
+            await PerifericoModel.create(produto);
+            const {nome} = produto;
+            return nome;
+        }catch(err){
+            throw new Error(err);
+        }
+    }
 
 }
 
