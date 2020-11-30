@@ -1,0 +1,24 @@
+{
+  "name": "bot_crawler",
+  "version": "1.0.0",
+  "description": "O objetivo do desafio é ajudar o seu robô a comprar um computador para ele morar!",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kitado/desafio-backend.git"
+  },
+  "author": "Stenio Dias Rapchan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kitado/desafio-backend/issues"
+  },
+  "homepage": "https://github.com/Kitado/desafio-backend#readme",
+  "dependencies": {
+    "got": "^10.6.0",
+    "mysql2": "^2.2.5",
+    "puppeteer": "^5.5.0"
+  }
+}

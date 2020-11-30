@@ -1,0 +1,21 @@
+version: "3.1"
+
+services:
+  mysql: 
+    image: mysql:5.7
+    ports: 
+     - 3304:3306
+    environment: 
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: desafio_crawler
+      MYSQL_ROOT_PASSWORD: root
+
+  crawler:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment: 
+      NODE_ENV: production
+    depends_on:   
+      - mysql
