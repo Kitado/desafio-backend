@@ -1,5 +1,6 @@
 const axios = require('axios')
 const cheerio = require('cheerio')
+const database = require('./database/database')
 
 const fecthData = async(url) =>{
     try{
@@ -11,9 +12,17 @@ const fecthData = async(url) =>{
 }
 
 
+const insertDatabase = async(table, title, price, dolarPrice, link, linkImg) =>{
+    try{
+        let data = await database.insert({title:title, price:price,dolarPrice:dolarPrice, link:link, linkImg:linkImg}).table(table)
+        console.log(data)
+    }catch(err){
+        console.log(err)
+    }
+}
+
 const graphicsCard = async() =>{
     const content = await fecthData('https://www.pichau.com.br/hardware/placa-de-video')
-    const products = []
     const $ = cheerio.load(content)
 
     axios.get('https://economia.awesomeapi.com.br/json/all').then(dados =>{
@@ -28,15 +37,11 @@ const graphicsCard = async() =>{
         let finalPrice = preco.split(' ')
         let formatedPrice = parseFloat(finalPrice[2].slice(2).replace(',', '.'))
         let dolarPrice = (formatedPrice * dolar).toFixed(2)
-        let product = {title:title.slice(1), preco:finalPrice[2], dolarPrice: '$' + dolarPrice, link, linkImg}
-        products.push(product)
+        insertDatabase('graphicsCard',title.slice(1),formatedPrice, parseFloat(dolarPrice), link, linkImg)
         })
-        console.log(products)
     })
     
 }
-
-
 
 
 const keyboard = async() =>{
@@ -56,10 +61,8 @@ const keyboard = async() =>{
         let finalPrice = preco.split(' ')
         let formatedPrice = parseFloat(finalPrice[2].slice(2).replace(',', '.'))
         let dolarPrice = (formatedPrice * dolar).toFixed(2)
-        let product = {title:title.slice(1), preco:finalPrice[2], dolarPrice: '$' + dolarPrice, link, linkImg}
-        products.push(product)
+        insertDatabase('keyboard',title.slice(1),formatedPrice, parseFloat(dolarPrice), link, linkImg)
         })
-        console.log(products)
     })
     
 }
@@ -81,10 +84,10 @@ const mouse = async() =>{
         let finalPrice = preco.split(' ')
         let formatedPrice = parseFloat(finalPrice[2].slice(2).replace(',', '.'))
         let dolarPrice = (formatedPrice * dolar).toFixed(2)
-        let product = {title:title.slice(1), preco:finalPrice[2], dolarPrice: '$' + dolarPrice, link, linkImg}
-        products.push(product)
+        insertDatabase('mouse',title.slice(1),formatedPrice, parseFloat(dolarPrice), link, linkImg)
+
         })
-        console.log(products)
+
     })
     
 }
@@ -107,10 +110,8 @@ const ssd = async() =>{
         let finalPrice = preco.split(' ')
         let formatedPrice = parseFloat(finalPrice[2].slice(2).replace(',', '.'))
         let dolarPrice = (formatedPrice * dolar).toFixed(2)
-        let product = {title:title.slice(1), preco:finalPrice[2], dolarPrice: '$' + dolarPrice, link, linkImg}
-        products.push(product)
+        insertDatabase('ssd',title.slice(1),formatedPrice, parseFloat(dolarPrice), link, linkImg)
         })
-        console.log(products)
     })
     
 }
@@ -132,10 +133,9 @@ const monitor = async() =>{
         let finalPrice = preco.split(' ')
         let formatedPrice = parseFloat(finalPrice[2].slice(2).replace(',', '.'))
         let dolarPrice = (formatedPrice * dolar).toFixed(2)
-        let product = {title:title.slice(1), preco:finalPrice[2], dolarPrice: '$' + dolarPrice, link, linkImg}
-        products.push(product)
+        insertDatabase('monitor',title.slice(1),formatedPrice, parseFloat(dolarPrice), link, linkImg)
         })
-        console.log(products)
+        
     })
     
 }
@@ -157,18 +157,23 @@ const computerCase = async() =>{
         let finalPrice = preco.split(' ')
         let formatedPrice = parseFloat(finalPrice[2].slice(2).replace(',', '.'))
         let dolarPrice = (formatedPrice * dolar).toFixed(2)
-        let product = {title:title.slice(1), preco:finalPrice[2], dolarPrice: '$' + dolarPrice, link, linkImg}
-        products.push(product)
+        insertDatabase('computerCase',title.slice(1),formatedPrice, parseFloat(dolarPrice), link, linkImg)
         })
-        console.log(products)
     })
     
 }
 
-computerCase()
 
+function main(){
+    graphicsCard()
+    keyboard()
+    mouse()
+    ssd()
+    monitor()
+    computerCase()
+}
 
-
+main()
 
 
 
